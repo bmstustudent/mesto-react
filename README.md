@@ -94,3 +94,6 @@
 - реализовал показ полноразмерной картинки при клике
 
 [По вопросам доработки сайта](https://t.me/therealshulc)
+
+# Пример, как работает открыть/закрыть popup:
+![alt gif](https://github.com/bmstustudent/mesto-react/blob/main/gif/sample.gif)
