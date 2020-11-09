@@ -1,73 +1,96 @@
-# Getting Started with Create React App
+<h1 align="center"><a  href="https://bmstustudent.github.io/mesto-react/" target="_blank"><img src="./gif/mesto_header.png" width="100%" alt="место фото"></a></h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Краткое описание:
 
-## Available Scripts
+<p align="center"> Проект разрабатывается студентом курса "Яндекс-Практикум". Место- сайт, где можно делиться фотографиями. </p>
 
-In the project directory, you can run:
+## Макет предоставлен Yandex-praktikum:
 
-### `npm start`
+[Макет 4](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Макет 5](https://www.figma.com/file/nlYpT4VhFiwimn2YlncrcF/JavaScript.-Sprint-5?node-id=0%3A1)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Макет 6](https://www.figma.com/file/XNaGNEZD5NEjeyJzAT4gMb/JavaScript.-Sprint-6)
 
-### `npm test`
+[Макет 9](https://www.figma.com/file/hhhIavVTeuilfPPZ6sbifl/JavaScript.-Sprint-9?node-id=0%3A1)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Фотографии брал с сайта
 
-### `npm run build`
+[Unsplash](https://unsplash.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Спринт-4:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Вёрстка:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- добавлен попап редактирования профиля
+- предусмотренно переполнение содержимого в блоке
 
-### `npm run eject`
+### JavaScript:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- реализованно открытие и закрытие попапа
+- поля формы заполненны значениями, которые отображаются на странице
+- реализованно редактирование имени и информации о себе
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Спринт-5:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- при загрузке на странице есть 6 карточек, которые добавляет JavaScript
+- реализованна форма добавления карточки
+- возможность ставить лайк карточке
+- удаление карточки
+- реализованно открытие попапа с картинкой (zoom)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Спринт-6:
 
-## Learn More
+### Реализованна возможность:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- валидация формы «Редактировать профиль»
+- валидация формы «Новое место»
+- закрытие попапа кликом на оверлей
+- закрытие попапа нажатием на Esc
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Спринт-7:
 
-### Code Splitting
+### Создание класса Card
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- принимает в конструктор её данные и селектор её template-элемента;
+- содержит приватные методы, которые работают с разметкой, устанавливают слушателей событий;
+- содержит приватные методы для каждого обработчика;
+- содержит один публичный метод, который возвращает полностью работоспособный и наполненный данными элемент карточки.
 
-### Analyzing the Bundle Size
+### Создание класса FormValidator:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- принимает в конструктор объект настроек с селекторами и классами формы;
+- принимает вторым параметром элемент той формы, которая валидируется;
+- имеет приватные методы, которые обрабатывают форму: проверяют валидность поля, изменяют состояние кнопки сабмита, устанавливают все обработчики;
+- имеет один публичный метод enableValidation, который включает валидацию формы.
 
-### Making a Progressive Web App
+### Разбивка JavaScript на модули:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- классы Card и FormValidator экспортируются из соответствующих файлов, импортируются в index.js и используются в нём
+- отдельные js-файлы подключены в index.html как модули
 
-### Advanced Configuration
+## Спринт-8:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Рефакторинг кода:
 
-### Deployment
+- создание класса Section, который отвечает за отрисовку элементов на странице.
+- создание класса Popup, который отвечает за открытие и закрытие попапа.
+- создание класса PopupWithImage, который наследует от Popup. Этот класс перезаписывает родительский метод open. В методе open класса PopupWithImage нужно вставлять в попап картинку и атрибут src изображения и подпись к картинке.
+- создание класса UserInfo: отвечает за управление отображением информации о пользователе на странице.
+- настроена сборка вебпаком
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Спринт-9:
 
-### `npm run build` fails to minify
+### Подключение проекта Mesto к серверу.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Спринт-10:
 
+- Создал новый проект на Create React App
+- Портировал разметку сайта
+- Портиновал стили
+- Вынесите первые компоненты (App, Card, Footer, Header, ImagePopup, Main, PopupWithForm)
+- Настроена работа попапов (открыть/закрыть)
+- Подключил API
+- реализовал показ полноразмерной картинки при клике
 
-///
+[По вопросам доработки сайта](https://t.me/therealshulc)
